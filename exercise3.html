@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 3</title>
+    <style></style>
+</head>
+
+<body>
+    <a href="index.html">Retour</a>
+    
+    <p>
+        <strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons
+    </p>
+    
+    
+    <script>
+        // Declare a global variable named allBoldItems.
+        let allBoldItems
+
+        // Create a function called getBold_items() that takes no parameter. This function should collect all the bold items inside the paragraph and assign them to the allBoldItems variable.
+        function getBold_items() {
+            const p = document.querySelector('p')
+            allBoldItems = p.getElementsByTagName('strong')
+        }
+
+        // Create a function called highlight() that changes the color of all the bold text to blue.
+        function highlight() {
+            for (let i = 0; i < allBoldItems.length; i++) {
+                allBoldItems[i].style.color = 'blue'
+            }
+        }
+
+        // Create a function called return_normal() that changes the color of all the bold text back to black.
+        function return_normal() {
+            for (let i = 0; i < allBoldItems.length; i++) {
+                allBoldItems[i].style.color = 'black'
+            }
+        }
+
+        // Call the function highlight() on mouseover (ie. when the mouse pointer is moved onto the paragraph), and the function return_normal() on mouseout (ie. when the mouse pointer is moved out of the paragraph). Look at this example
+        const p = document.querySelector('p')
+        p.addEventListener('mouseover', highlight)
+        p.addEventListener('mouseout', return_normal)
+
+        window.addEventListener('load', getBold_items)
+
+    </script>
+</body>
+</html>

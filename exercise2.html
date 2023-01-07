@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html">Retour</a>
+    <br><br>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form> 
+    <ul class="usersAnswer"></ul>
+
+    <script>
+        // Retrieve the form and console.log it.
+        const form = document.getElementsByTagName('form')[0]
+        console.log(form)
+
+        // Retrieve the inputs by their id and console.log them.
+        const fnameInput = document.getElementById('fname')
+        const lnameInput = document.getElementById('lname')
+        console.log(fnameInput)
+        console.log(lnameInput)
+
+
+        // Retrieve the inputs by their name attribute and console.log them.
+        const inputs = document.getElementsByName('fname')
+        console.log(inputs)
+
+        // When the user submits the form (ie. submit event listener)
+        // use event.preventDefault(), why ?
+        // get the values of the input tags,
+        // make sure that they are not empty,
+        // create an li per input value,
+        // then append them to a the <ul class="usersAnswer"></ul>, below the form.
+        // The output should be :
+
+        // <ul class="usersAnswer">
+        //     <li>first name of the user</li>
+        //     <li>last name of the user</li>
+        // </ul>
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the form from being submitted
+
+            const fname = fnameInput.value
+            const lname = lnameInput.value
+
+            if (fname !== '' && lname !== '') {
+                const ul = document.querySelector('.usersAnswer')
+                const fnameLi = document.createElement('li')
+                const lnameLi = document.createElement('li')
+                fnameLi.textContent = fname
+                lnameLi.textContent = lname
+                ul.appendChild(fnameLi)
+                ul.appendChild(lnameLi)
+            }
+        })
+
+    </script>
+</body>
+</html>
