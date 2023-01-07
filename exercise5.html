@@ -5,10 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise 5</title>
+
+    
 </head>
 <body>
+    <a href="index.html"></a>
+
+    <div id="element">Developpers.Institute</div>
 
     <script>
+        const div = document.getElementById('element')
+        div.style.position = 'relative'
+
+        div.addEventListener('click', () => {
+            // Change position x
+            div.style.left = '100px'
+        })
+
+        div.addEventListener('mouseover', () => {
+            // Change position y
+            div.style.top = '100px'
+        })
+
+        div.addEventListener('mouseout', () => {
+            // Change color
+            div.style.color = 'blue'
+        })
+
+        div.addEventListener('dblclick', () => {
+            // Change font size
+            div.style.fontSize = '24px'
+        })
 
     </script>
 </body>
